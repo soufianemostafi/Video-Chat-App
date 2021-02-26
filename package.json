@@ -3,13 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    
-    "start": "npm run serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
-  },
-  "engines": {
-    "node": "14.15.5"
   },
   "dependencies": {
     "core-js": "^3.6.5",
