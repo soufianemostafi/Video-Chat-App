@@ -2,7 +2,7 @@
   <div class="container mt-4">
     <div class="row justify-content-center">
       <div class="col-12 col-md-9 col-lg-7">
-        <h1 class="font-weight-light text-center text-light">Add a Room</h1>
+        <h1 class="font-weight-light text-center text-light"> Add a Room </h1>
 
         <div class="card bg-light">
           <div class="card-body text-center">
@@ -20,7 +20,7 @@
                 <div class="input-group-append">
                   <button
                     type="submit"
-                    class="btn btn-sm btn-info"
+                    class="btn btn-sm btn-info btn-danger"
                     id="buttonAdd"
                     @click.prevent="handleAdd"
                   >
@@ -37,7 +37,7 @@
       <div class="col-11 col-md-8 col-lg-6">
         <div class="card border-top-0 rounded-0">
           <div class="card-body py-2">
-            <h4 class="card-title m-0 text-center font-italic">Your Rooms</h4>
+            <h4 class="card-title m-0 text-center font-italic text-danger">Your Rooms</h4>
           </div>
           <div class="list-group list-group-flush">
             <div
@@ -60,15 +60,15 @@
                     title="Delete Room"
                     @click="$emit('deleteRoom', item.id)"
                   >
-                    <font-awesome-icon icon="trash"></font-awesome-icon>
+                    <font-awesome-icon icon="trash" style="color:#d9534f"></font-awesome-icon>
                   </button>
 
                   <router-link
                     class="btn btn-sm btn-outline-secondary"
                     title="Check In"
-                    to="/"
+                    :to="`/checkin/${user.uid}/${item.id}`"
                   >
-                    <font-awesome-icon icon="user"></font-awesome-icon>
+                    <font-awesome-icon icon="user" style="color:#d9534f"></font-awesome-icon>
                   </router-link>
 
                   <router-link
@@ -76,10 +76,10 @@
                     title="Chat"
                     to="/"
                   >
-                    <font-awesome-icon icon="video"></font-awesome-icon>
+                    <font-awesome-icon icon="video" style="color:#d9534f"></font-awesome-icon>
                   </router-link>
                 </section>
-                <div class="ml-5">{{ item.name }}</div>
+                <div class="ml-3">{{ item.name }}</div>
               </section>
             </div>
           </div>
@@ -108,7 +108,7 @@ export default {
       this.$refs.roomName.focus();
     },
   },
-  props: ["rooms"],
+  props: ['rooms','user'],
 };
 </script>
 <style type="text/css">
