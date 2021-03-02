@@ -1,3 +1,4 @@
+
 <template>
   <form class="mt-3" @submit.prevent="handleCheckIn">
     <div class="container">
@@ -67,9 +68,9 @@ export default {
             .doc(this.user.uid)
             .set({
               displayName: this.displayName,
-              createAd: Firebase.firestore.FieldValue.serverTimestamp(),
+              createdAt: Firebase.firestore.FieldValue.serverTimestamp(),
             })
-            .then(() => this.$router.push("/"));
+            .then(() => this.$router.push(`/chat/${this.$route.params.hostID}/${this.$route.params.roomID}`));
         }
       });
     },

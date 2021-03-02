@@ -5,6 +5,7 @@ import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import Rooms from '../views/Rooms.vue'
 import CheckIn from '../views/CheckIn.vue'
+import Chat from '../views/Chat.vue'
 
 Vue.use(VueRouter)
 
@@ -18,6 +19,11 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/chat/:hostID/:roomID',
+    name: 'Chat',
+    component: Chat
   },
   {
     path: '/checkin/:hostID/:roomID',

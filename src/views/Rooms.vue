@@ -74,7 +74,7 @@
                   <router-link
                     class="btn btn-sm btn-outline-secondary"
                     title="Chat"
-                    to="/"
+                    :to="`/chat/${user.uid}/${item.id}`"
                   >
                     <font-awesome-icon icon="video" style="color:#d9534f"></font-awesome-icon>
                   </router-link>

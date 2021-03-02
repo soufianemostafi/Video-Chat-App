@@ -99,7 +99,7 @@ export default {
                   displayName: this.displayName,
                 })
                 .then(() => {
-                  this.$router.push("/");
+                  this.$router.push("/rooms");
                 });
             },
             (error) => (this.error = error.message)
